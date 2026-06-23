@@ -8,7 +8,6 @@ export default function AddReview() {
 
   const [formData, setFormData] = useState({
     fullName: "",
-    subject: "",
     reviewText: "",
     rating: 1,
   });
@@ -25,7 +24,7 @@ export default function AddReview() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.fullName || !formData.subject || !formData.reviewText) {
+    if (!formData.fullName || !formData.reviewText) {
       setError("All fields are required");
       return;
     }
@@ -56,15 +55,6 @@ export default function AddReview() {
             name="fullName"
             placeholder="Your Name"
             value={formData.fullName}
-            onChange={handleChange}
-            className="w-full border p-2 rounded"
-          />
-
-          <input
-            type="text"
-            name="subject"
-            placeholder="Review Subject"
-            value={formData.subject}
             onChange={handleChange}
             className="w-full border p-2 rounded"
           />

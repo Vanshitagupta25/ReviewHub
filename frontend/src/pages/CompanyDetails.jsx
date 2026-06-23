@@ -90,7 +90,6 @@ export default function CompanyDetail() {
           key={review._id}
           className="bg-white shadow-md p-4 rounded-lg mb-4"
         >
-          <h3 className="font-semibold">{review.subject}</h3>
 
           {/* Show rating if exists */}
           {review.rating && (

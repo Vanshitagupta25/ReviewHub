@@ -29,6 +29,7 @@ export default function Home(){
           sort,
           city,
        });
+       console.log("Companies API:", res.data);
       setCompanies(res.data);
 
     } catch(err) {

@@ -43,10 +43,11 @@ export default function AddCompany() {
       data.append("foundedOn", formData.foundedOn);
       data.append("logo", formData.logo);
 
-      await axios.post(`${BACKEND_URL}/companies`, data, {
+      const url = `${BACKEND_URL}/companies`;
+
+      await axios.post(url, data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-
       navigate("/");
     } catch (err) {
       console.log(err);

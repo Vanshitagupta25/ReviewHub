@@ -6,22 +6,22 @@ const API = axios.create({
 });
 //company
 export const getCompanies = (params) =>
-  API.get("/companies", { params });
+  API.get("companies", { params });
 
 export const addCompany = (data) =>
-  API.post("/companies", data);
+  API.post("companies", data);
 
-export const getSingleCompany = (id) => API.get(`/companies/${id}`);
+export const getSingleCompany = (id) => API.get(`companies/${id}`);
 
 //review
 export const addReview = (companyId, data) =>
-  API.post(`/reviews/${companyId}`, data);
+  API.post(`reviews/${companyId}`, data);
 
 export const getReviews = (companyId) =>
-  API.get(`/reviews/${companyId}`);
+  API.get(`reviews/${companyId}`);
 
 export const likeReview = (reviewId) =>
-  API.get(`/reviews/like/${reviewId}`);
+  API.get(`reviews/like/${reviewId}`);
 
 
 export default API;

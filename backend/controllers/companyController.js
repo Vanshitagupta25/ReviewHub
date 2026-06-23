@@ -20,8 +20,6 @@ exports.addCompany = async(req,res) => {
   }
 };
 
-//get companies
-//search & filter funcationality
 exports.getCompanies = async (req, res) => {
   try {
     const { search, city, location, sort } = req.query;

@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { StarIcon } from "@heroicons/react/24/solid";
 
+const BACKEND_URL = import.meta.env.VITE_API_URL;
+
 export default function CompanyCard({ company }) {
   const formattedDate = company.foundedOn
     ? (() => {
@@ -31,7 +33,7 @@ export default function CompanyCard({ company }) {
           <img
             src={
               company.logo
-                ? `http://localhost:5000/uploads/${company.logo}`
+                ? `${BACKEND_URL}/uploads/${company.logo}`
                 : "/media/goldenpiLogo.png"
             }
             alt={company.name}

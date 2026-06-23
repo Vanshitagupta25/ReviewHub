@@ -10,14 +10,14 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: process.env.FRONTEND_URL,
   credentials: true
 }));
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 
-app.use("/api/companies", require("./routes/companyRoutes"));
-app.use("/api/reviews", require("./routes/reviewRoutes"));
+app.use("/companies", require("./routes/companyRoutes"));
+app.use("/reviews", require("./routes/reviewRoutes"));
 
 const PORT  = process.env.PORT || 5000;
 
